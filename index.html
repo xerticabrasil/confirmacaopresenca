@@ -76,25 +76,27 @@
             box-shadow: 0 0 20px rgba(0, 190, 255, 0.15);
         }
 
-        /* Área de Captura do Convite */
+        /* Área de Captura do Convite (WhatsApp PNG) */
         #capture-area {
             width: 1280px;
             height: 720px;
             background-color: #050505;
-            background-image: linear-gradient(to right, rgba(5, 5, 5, 0.9) 30%, rgba(5, 5, 5, 0.2) 100%),
-                              url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1280&auto=format&fit=crop');
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(192, 255, 125, 0.15) 0%, transparent 45%), 
+                radial-gradient(circle at 0% 100%, rgba(255, 137, 255, 0.15) 0%, transparent 45%), 
+                radial-gradient(circle at 100% 0%, rgba(0, 190, 255, 0.15) 0%, transparent 45%);
             background-size: cover;
-            background-position: center;
             transform-origin: top left;
             position: absolute;
             top: 0;
             left: 0;
+            overflow: hidden;
         }
 
         .invite-glass {
-            background: rgba(8, 12, 20, 0.85);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .invite-icon-circle {
@@ -112,7 +114,7 @@
             position: relative;
             width: 100%;
             overflow: hidden;
-            border-radius: 0.75rem;
+            border-radius: 1rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -156,7 +158,6 @@
                                 <p class="text-xs text-slate-500">Insira o nome do convidado abaixo.</p>
                             </div>
 
-                            <!-- Nome do Convidado -->
                             <div class="space-y-1.5">
                                 <label class="block text-[10px] uppercase font-bold text-brand-blue tracking-wider">Nome do Convidado</label>
                                 <input type="text" id="inputName" placeholder="Ex: João" class="custom-input w-full px-4 py-3 rounded-xl text-sm" autofocus>
@@ -178,16 +179,16 @@
                                 <!-- Coluna de Texto -->
                                 <div class="w-7/12 space-y-5">
                                     <div class="inline-block mt-4">
-                                        <span class="text-brand-blue text-xs font-bold uppercase tracking-widest">Confirmação de Presença</span>
+                                        <span class="text-brand-blue text-xs font-bold uppercase tracking-[0.2em]">Almoço Exclusivo</span>
                                     </div>
                                     <h2 class="text-5xl font-extrabold text-white leading-[1.1] font-display">
-                                        Almoço <span class="text-brand-blue">Exclusivo</span>
+                                        Confirmação de <span class="text-brand-blue">Presença</span>
                                     </h2>
-                                    <div class="py-4 border-l-4 border-brand-pink pl-5">
-                                        <h1 id="previewName" class="text-4xl font-bold text-brand-blue mb-3 font-display leading-tight">Olá, [Convidado]</h1>
+                                    <div class="py-4 border-l-4 border-brand-pink pl-6">
+                                        <h1 id="previewName" class="text-4xl font-bold text-white mb-3 font-display leading-tight">Olá, [Convidado]</h1>
                                         <p class="text-lg text-slate-300 font-light leading-relaxed">
-                                            O PS Summit será incrível! Para celebrarmos as conexões deste evento, preparamos um almoço executivo especial para você e para um grupo seleto de líderes.<br><br>
-                                            Por favor, confirme sua presença respondendo essa mensagem.
+                                            É uma honra ter você conosco. Preparamos um momento especial no Nau Brasília para celebrarmos as parcerias deste PS Summit e trocarmos insights.<br><br>
+                                            Qualquer dúvida entre em contato com <strong>Desyre Guerrero</strong>, telefone <strong>(19) 99751-9909</strong>.
                                         </p>
                                     </div>
                                     <div class="flex items-center gap-5 pt-1">
@@ -203,14 +204,14 @@
 
                                 <!-- Coluna de Detalhes -->
                                 <div class="w-5/12 h-full flex items-center">
-                                    <div class="invite-glass rounded-3xl p-8 w-full border border-white/10">
+                                    <div class="invite-glass rounded-[40px] p-8 w-full border border-white/10 shadow-2xl">
                                         <div class="space-y-6">
                                             <div class="flex gap-4">
-                                                <div class="bg-white/5 rounded-xl p-4 text-center flex-1 border border-white/10">
+                                                <div class="bg-white/5 rounded-2xl p-4 text-center flex-1 border border-white/10">
                                                     <span class="block text-brand-blue font-bold text-3xl font-display">11/03</span>
                                                     <span class="block text-slate-400 text-[10px] uppercase font-bold mt-1 tracking-widest">Data</span>
                                                 </div>
-                                                <div class="bg-white/5 rounded-xl p-4 text-center flex-1 border border-white/10">
+                                                <div class="bg-white/5 rounded-2xl p-4 text-center flex-1 border border-white/10">
                                                     <span class="block text-white font-bold text-3xl font-display">12h00</span>
                                                     <span class="block text-slate-400 text-[10px] uppercase font-bold mt-1 tracking-widest">Horário</span>
                                                 </div>
@@ -219,7 +220,7 @@
                                                 <div class="invite-icon-circle shrink-0"><span class="material-symbols-outlined text-brand-green">location_on</span></div>
                                                 <div>
                                                     <p class="text-slate-400 text-[10px] uppercase font-bold tracking-widest">Localização</p>
-                                                    <h4 class="text-white text-sm leading-snug">Nau Brasília<br><span class="text-[11px] font-light">Setor de clubes esportivos Sul, Asa Sul trecho 2, Brasília DF</span></h4>
+                                                    <h4 class="text-white text-sm leading-snug">Nau Brasília<br><span class="text-[11px] font-light">Setor de clubes esportivos Sul, Brasília DF</span></h4>
                                                 </div>
                                             </div>
                                             <div class="pt-4 border-t border-white/10">
@@ -239,12 +240,11 @@
         <section id="section-email" class="space-y-8 pt-10 border-t border-white/5">
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined text-brand-pink">mail</span>
-                <h2 class="text-2xl font-bold text-white">2. Conteúdo do E-mail (HTML Dark Glow)</h2>
+                <h2 class="text-2xl font-bold text-white">2. Conteúdo do E-mail</h2>
             </div>
 
             <div class="glass-panel rounded-3xl p-10 max-w-5xl mx-auto">
                 <div class="email-preview-container p-0 shadow-inner overflow-auto max-h-[800px]">
-                    <!-- ESTE É O CONTEÚDO QUE SERÁ COPIADO -->
                     <table id="email-content-inner" cellpadding="0" cellspacing="0" border="0" width="100%" 
                            style="background-color: #050505; 
                                   background-image: radial-gradient(circle at 0% 0%, rgba(192, 255, 125, 0.12) 0%, transparent 40%), 
@@ -256,17 +256,11 @@
                         <tr>
                             <td align="center" style="padding: 50px 40px;">
                                 <div style="max-width: 600px; text-align: left; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #e2e8f0; line-height: 1.6;">
-                                    
                                     <p style="margin: 0 0 15px 0; color: #ffffff; font-size: 18px;"><strong id="email-name-display">[Nome do Cliente]</strong>,</p>
-                                    
                                     <p style="margin: 0 0 15px 0; color: #e2e8f0;">Estamos muito felizes em contar com a sua presença no nosso almoço exclusivo durante o PS Summit.</p>
-                                    
                                     <p style="margin: 0 0 15px 0; font-weight: bold; color: #00BEFF;">E sua reserva está confirmada!</p>
-                                    
                                     <p style="margin: 0 0 15px 0; color: #e2e8f0;">Chegue às 12h00 para aproveitar o máximo o momento de networking e troca de experiências com os demais líderes presentes.</p>
-                                    
                                     <p style="margin: 25px 0 10px 0; font-size: 13px; text-transform: uppercase; color: #00BEFF; font-weight: bold; letter-spacing: 1.5px;">informações</p>
-                                    
                                     <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 25px;">
                                         <tr>
                                             <td style="background-color: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); border-left: 5px solid #FF89FF;">
@@ -277,9 +271,7 @@
                                             </td>
                                         </tr>
                                     </table>
-                                    
-                                    <p style="margin: 30px 0 25px 0; color: #e2e8f0;">Caso precise de ajuda, você pode entrar em contato com: <strong>Desyre Guerrero</strong>, telefone <strong>(19) 99751-9909</strong>.</p>
-                                    
+                                    <p style="margin: 30px 0 25px 0; color: #e2e8f0;">Qualquer dúvida entre em contato com <strong>Desyre Guerrero</strong>, telefone <strong>(19) 99751-9909</strong>.</p>
                                     <p style="margin: 40px 0 0 0; color: #e2e8f0;">Atenciosamente,</p>
                                 </div>
                             </td>
@@ -341,7 +333,7 @@
 
             const link = document.createElement('a');
             const name = inputGuest.value.trim() || 'convidado';
-            link.download = `almoco-xertica-${name.toLowerCase().replace(/\s+/g, '-')}.png`;
+            link.download = `convite-xertica-${name.toLowerCase().replace(/\s+/g, '-')}.png`;
             link.href = canvas.toDataURL('image/png', 1.0);
             link.click();
 
@@ -352,9 +344,7 @@
         function copyEmail() {
             const emailArea = document.getElementById('email-content-inner');
             const range = document.createRange();
-            
             range.selectNode(emailArea); 
-            
             const selection = window.getSelection();
             selection.removeAllRanges();
             selection.addRange(range);
@@ -363,7 +353,6 @@
                 const successful = document.execCommand('copy');
                 const btn = document.getElementById('copyBtn');
                 const originalText = btn.innerHTML;
-                
                 if (successful) {
                     btn.innerHTML = '<span class="material-symbols-outlined">check</span> E-mail Copiado!';
                     btn.style.backgroundColor = '#10b981';
