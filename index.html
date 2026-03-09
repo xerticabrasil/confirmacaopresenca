@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -159,7 +159,7 @@
                             <!-- Nome do Convidado -->
                             <div class="space-y-1.5">
                                 <label class="block text-[10px] uppercase font-bold text-brand-blue tracking-wider">Nome do Convidado</label>
-                                <input type="text" id="inputName" placeholder="Ex: Dr. João Silva" class="custom-input w-full px-4 py-3 rounded-xl text-sm" autofocus>
+                                <input type="text" id="inputName" placeholder="Ex: João" class="custom-input w-full px-4 py-3 rounded-xl text-sm" autofocus>
                             </div>
 
                             <button onclick="downloadInvite()" class="w-full mt-4 py-4 rounded-xl bg-gradient-brand text-white font-bold uppercase tracking-widest text-sm hover:brightness-110 transform transition-all shadow-lg flex justify-center items-center gap-2">
@@ -242,8 +242,8 @@
                 <h2 class="text-2xl font-bold text-white">2. Conteúdo do E-mail (HTML Dark Glow)</h2>
             </div>
 
-            <div class="glass-panel rounded-3xl p-10 max-w-4xl mx-auto">
-                <div class="email-preview-container p-0 shadow-inner overflow-auto max-h-[700px]">
+            <div class="glass-panel rounded-3xl p-10 max-w-5xl mx-auto">
+                <div class="email-preview-container p-0 shadow-inner overflow-auto max-h-[800px]">
                     <!-- ESTE É O CONTEÚDO QUE SERÁ COPIADO -->
                     <table id="email-content-inner" cellpadding="0" cellspacing="0" border="0" width="100%" 
                            style="background-color: #050505; 
@@ -257,13 +257,15 @@
                             <td align="center" style="padding: 50px 40px;">
                                 <div style="max-width: 600px; text-align: left; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #e2e8f0; line-height: 1.6;">
                                     
-                                    <p style="margin: 0 0 20px 0; color: #e2e8f0;">Olá, <strong id="email-name-display" style="color: #ffffff;">[Nome do Cliente]</strong>,</p>
+                                    <p style="margin: 0 0 15px 0; color: #ffffff; font-size: 18px;"><strong id="email-name-display">[Nome do Cliente]</strong>,</p>
                                     
-                                    <p style="margin: 0 0 15px 0; color: #e2e8f0;">O <strong>PS Summit</strong> será incrível e trará uma jornada de muito aprendizado e troca de experiências.</p>
+                                    <p style="margin: 0 0 15px 0; color: #e2e8f0;">Estamos muito felizes em contar com a sua presença no nosso almoço exclusivo durante o PS Summit.</p>
                                     
-                                    <p style="margin: 0 0 15px 0; color: #e2e8f0;">Para tornar o dia ainda mais especial, gostaríamos de convidá-lo(a) para um almoço executivo exclusivo no <strong>Nau Brasília</strong>, onde poderemos aprofundar as nossas conversas num ambiente mais reservado.</p>
+                                    <p style="margin: 0 0 15px 0; font-weight: bold; color: #00BEFF;">E sua reserva está confirmada!</p>
                                     
-                                    <p style="margin: 35px 0 10px 0; font-size: 13px; text-transform: uppercase; color: #00BEFF; font-weight: bold; letter-spacing: 1.5px;">Dados do Almoço:</p>
+                                    <p style="margin: 0 0 15px 0; color: #e2e8f0;">Chegue às 12h00 para aproveitar o máximo o momento de networking e troca de experiências com os demais líderes presentes.</p>
+                                    
+                                    <p style="margin: 25px 0 10px 0; font-size: 13px; text-transform: uppercase; color: #00BEFF; font-weight: bold; letter-spacing: 1.5px;">informações</p>
                                     
                                     <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 25px;">
                                         <tr>
@@ -276,7 +278,7 @@
                                         </tr>
                                     </table>
                                     
-                                    <p style="margin: 30px 0 25px 0; color: #e2e8f0;">Poderia nos confirmar se conseguirá participar? Basta responder a este e-mail.</p>
+                                    <p style="margin: 30px 0 25px 0; color: #e2e8f0;">Caso precise de ajuda, você pode entrar em contato com: <strong>Desyre Guerrero</strong>, telefone <strong>(19) 99751-9909</strong>.</p>
                                     
                                     <p style="margin: 40px 0 0 0; color: #e2e8f0;">Atenciosamente,</p>
                                 </div>
@@ -303,7 +305,7 @@
         inputGuest.addEventListener('input', (e) => {
             const val = e.target.value.trim();
             previewGuestName.textContent = val ? 'Olá, ' + val : 'Olá, [Convidado]';
-            emailGuestDisplay.textContent = val ? val : '[Nome do Cliente]';
+            emailGuestDisplay.textContent = val ? val + ',' : '[Nome do Cliente],';
         });
 
         function resizePreview() {
